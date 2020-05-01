@@ -205,9 +205,9 @@ func (s mysqlSource) WriteSchema(dst io.Writer) error {
 	}
 	defer db.Close()
 
-	tableRows, err := db.Query("SHOW TABLES")
+	tableRows, err := db.Query("SHOW FULL TABLES")
 	if err != nil {
-		return errors.Wrap(err, `failed to execute 'SHOW TABLES'`)
+		return errors.Wrap(err, `failed to execute 'SHOW FULL TABLES'`)
 	}
 	defer tableRows.Close()
 
