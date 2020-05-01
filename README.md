@@ -4,7 +4,7 @@ Generate the difference of two mysql schema
 
 [![Build Status](https://travis-ci.org/schemalex/schemalex.png?branch=master)](https://travis-ci.org/schemalex/schemalex)
 
-[![GoDoc](https://godoc.org/github.com/schemalex/schemalex?status.svg)](https://godoc.org/github.com/schemalex/schemalex)
+[![GoDoc](https://godoc.org/github.com/jongsy/schemalex?status.svg)](https://godoc.org/github.com/jongsy/schemalex)
 
 ## SYNOPSIS
 
@@ -101,7 +101,7 @@ package schemalex_test
 import (
 	"os"
 
-	"github.com/schemalex/schemalex/diff"
+	"github.com/jongsy/schemalex/diff"
 )
 
 func Example() {

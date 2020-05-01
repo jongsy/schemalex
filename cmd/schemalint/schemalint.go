@@ -10,8 +10,8 @@ import (
 	"runtime"
 
 	"github.com/pkg/errors"
-	"github.com/schemalex/schemalex"
-	"github.com/schemalex/schemalex/lint"
+	"github.com/jongsy/schemalex"
+	"github.com/jongsy/schemalex/lint"
 )
 
 var version string

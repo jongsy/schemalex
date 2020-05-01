@@ -6,8 +6,8 @@ import (
 	"io"
 
 	"github.com/pkg/errors"
-	"github.com/schemalex/schemalex"
-	"github.com/schemalex/schemalex/format"
+	"github.com/jongsy/schemalex"
+	"github.com/jongsy/schemalex/format"
 )
 
 type Linter struct{}
