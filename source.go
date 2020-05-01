@@ -231,10 +231,7 @@ func (s mysqlSource) WriteSchema(dst io.Writer) error {
 				return errors.Wrapf(err, `failed to execute 'SHOW CREATE TABLE "%s"'`, table)
 			}
 		}
-
-		if err = db.QueryRow("SHOW CREATE TABLE `"+table+"`").Scan(&table, &tableSchema); err != nil {
-			return errors.Wrapf(err, `failed to execute 'SHOW CREATE TABLE "%s"'`, table)
-		}
+		
 		if buf.Len() > 0 {
 			buf.WriteString("\n\n")
 		}
