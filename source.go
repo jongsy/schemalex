@@ -221,7 +221,9 @@ func (s mysqlSource) WriteSchema(dst io.Writer) error {
 		}
 		
 		if tableType == "VIEW" {
-			if err = db.QueryRow("SHOW CREATE TABLE `"+table+"`").Scan(&table, &tableSchema, _, _); err != nil {
+			var c string
+			var e sting
+			if err = db.QueryRow("SHOW CREATE TABLE `"+table+"`").Scan(&table, &tableSchema, &c, &e); err != nil {
 				return errors.Wrapf(err, `failed to execute 'SHOW CREATE TABLE "%s"'`, table)
 			}
 		} else {
