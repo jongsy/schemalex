@@ -221,17 +221,17 @@ func (s mysqlSource) WriteSchema(dst io.Writer) error {
 		}
 		
 		if tableType == "VIEW" {
-			var c string
-			var e string
-			if err = db.QueryRow("SHOW CREATE TABLE `"+table+"`").Scan(&table, &tableSchema, &c, &e); err != nil {
-				return errors.Wrapf(err, `failed to execute 'SHOW CREATE TABLE "%s"'`, table)
-			}
+			//var c string
+			//var e string
+			//if err = db.QueryRow("SHOW CREATE TABLE `"+table+"`").Scan(&table, &tableSchema, &c, &e); err != nil {
+			//	return errors.Wrapf(err, `failed to execute 'SHOW CREATE TABLE "%s"'`, table)
+			//}
 		} else {
 			if err = db.QueryRow("SHOW CREATE TABLE `"+table+"`").Scan(&table, &tableSchema); err != nil {
 				return errors.Wrapf(err, `failed to execute 'SHOW CREATE TABLE "%s"'`, table)
 			}
 		}
-		
+
 		if buf.Len() > 0 {
 			buf.WriteString("\n\n")
 		}
